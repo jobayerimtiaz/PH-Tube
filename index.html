@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PH-Tube</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/fb06a790c6.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,8 +23,54 @@
 </head>
 
 <body class="inter-font">
-    <h1 class="text-6xl">hello</h1>
+    <nav
+        class="w-11/12 flex justify-between items-center mx-auto py-8 border-b-2 border-gray-300 flex-col md:flex-row gap-3 md:gap-0">
+        <div class="logo w-25">
+            <img src="Assets/Logo.png" alt="">
+        </div>
+        <div class="search">
+            <label class="input input-bordered flex items-center gap-2">
+                <input id="search-input" type="text" class="grow" placeholder="Search" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                    class="h-4 w-4 opacity-70">
+                    <path fill-rule="evenodd"
+                        d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                        clip-rule="evenodd" />
+                </svg>
+            </label>
+        </div>
+        <div class="sort">
+            <button class="btn">Sort</button>
+        </div>
+    </nav>
+    <main>
+        <div id="button-container" class="flex justify-center items-center gap-4 py-3">
+
+        </div>
+
+        <div id="video-container" class="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-5">
+
+        </div>
+        <!-- modal -->
+        <button class="btn hidden" onclick="detailsModal.showModal()">open modal</button>
+        <dialog id="detailsModal" class="modal">
+            <div class="modal-box">
+                <div id="details-info">
+
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+    </main>
+
+
     <script src="js/video.js"></script>
+
 </body>
 
 </html>
